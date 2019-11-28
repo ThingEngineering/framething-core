@@ -1,2 +1,2 @@
 # framething-core
-Framething .NET Core
+Framething .NET Core rewrite
