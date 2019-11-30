@@ -1,0 +1,36 @@
+/* Drops */
+.drop-table {
+    margin-bottom: 0;
+}
+.drop-table.table-dark.table-striped tbody tr.drop-active {
+    background-color: rgba(0, 255, 0, .12);
+}
+.drop-table.table-dark.table-striped tbody tr.drop-active:nth-of-type(odd) {
+    background-color: rgba(0, 255, 0, .2);
+}
+.drop-table.table-dark.table-striped tbody tr.drop-vaulted {
+    background-color: rgba(255, 0, 0, .12);
+    color: $gray-300;
+}
+.drop-table.table-dark.table-striped tbody tr.drop-vaulted:nth-of-type(odd) {
+    background-color: rgba(255, 0, 0, .25);
+    color: $gray-300;
+}
+.drop-table td {
+    vertical-align: middle;
+    white-space: nowrap!important;
+
+    &:first-child {
+        padding-left: .5rem;
+    }
+    &:last-child {
+        padding-right: .5rem;
+        text-align: right;
+    }
+
+    img {
+        width: 18px;
+        height: 18px;
+        margin: -2px 0 0 2px;
+    }
+}
