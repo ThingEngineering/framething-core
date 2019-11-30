@@ -8,6 +8,7 @@ services:
       dockerfile: development.Dockerfile
     ports:
       - 50000:5000
+      - 50001:5001
     depends_on:
       - postgres
     environment:
