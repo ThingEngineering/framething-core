@@ -7,22 +7,32 @@
     <link rel="apple-touch-icon" sizes="180x180" href="~/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="~/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="~/favicon-16x16.png">
-    
     <link rel="stylesheet" asp-href-include="~/dist/framething.*css" />
 </head>
 <body>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
-    </div>
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark justify-content-between fixed-top">
+        <a class="navbar-brand" href="/">Framething</a>
+        {% if user.is_authenticated %}
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'user_code' code=user.userprofile.code %}">Home</a>
+            </li>
+        </ul>
+        <span class="navbar-text">{{ user.username }}</span>
+        {% else %}
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'social:begin' 'google-oauth2' %}">Login with Google</a>
+            </li>
+        </ul>
+        {% endif %}
+    </nav>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2019 - Framething - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
+    <main role="main" class="container-fluid">
+        @RenderBody()
+    </main>
 
+    <script type="text/javascript" asp-src-include="~/dist/data.*js"></script>
     <script type="text/javascript" asp-src-include="~/dist/framething.*js"></script>
 
     @RenderSection("Scripts", required: false)

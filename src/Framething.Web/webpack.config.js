@@ -12,6 +12,9 @@ module.exports = (env, argv) => {
                 './Static/JS/framething.js',
                 './Static/CSS/framething.scss',
             ],
+            data: [
+                './Static/JS/generated_data.js',
+            ],
         },
         output: {
             filename: mode === 'production' ? '[name].[chunkhash].js' : '[name].js',
@@ -46,6 +49,11 @@ module.exports = (env, argv) => {
             new MiniCssExtractPlugin({
                 filename: mode === 'production' ? '[name].[contenthash].css' : '[name].css',
             }),
-        ]
+        ],
+        resolve: {
+            alias: {
+                'vue$': 'vue/dist/vue.esm.js' // 'vue/dist/vue.common.js' for webpack 1
+            },
+        },
     };
 };
