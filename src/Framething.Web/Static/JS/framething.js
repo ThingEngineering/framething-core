@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
+import { $ } from 'jquery';
 
 import './directives.js';
 import { store } from './store.js';
@@ -40,13 +41,13 @@ const App = new Vue({
 }).$mount('#app');
 
 // jQuery
-$.ajaxSetup({
+/*$.ajaxSetup({
     beforeSend: function(xhr, settings) {
         if (!this.crossDomain) {
             xhr.setRequestHeader('X-CSRFToken', $("[name=csrfmiddlewaretoken]").val());
         }
     },
-});
+});*/
 
 // Save timer
 if (!store.state.public) {

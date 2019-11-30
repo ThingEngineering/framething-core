@@ -1,4 +1,4 @@
-import Vue from './lib/vue-2.6.10.min.js';
+import Vue from 'vue';
 
 // Bootstrap tooltips
 Vue.directive('tooltip', {

@@ -17,37 +17,41 @@ module.exports = (env, argv) => {
             ],
         },
         output: {
-            filename: mode === 'production' ? '[name].[chunkhash].js' : '[name].js',
+            filename: mode === 'production' ? '[name].[chunkhash:8].js' : '[name].js',
             path: path.resolve(__dirname, 'wwwroot/dist'),
         },
         module: {
             rules: [
                 {
                     test: /\.s[ac]ss$/,
-                    use:
-                        [
-                            //'style-loader',
-                            MiniCssExtractPlugin.loader,
-                            'css-loader',
-                            {
-                                loader: 'postcss-loader',
-                                options: {
-                                    config: {
-                                        ctx: {
-                                            env: mode
-                                        }
+                    use: [
+                        //'style-loader',
+                        MiniCssExtractPlugin.loader,
+                        'css-loader',
+                        {
+                            loader: 'postcss-loader',
+                            options: {
+                                config: {
+                                    ctx: {
+                                        env: mode
                                     }
                                 }
-                            },
-                            'sass-loader'
-                        ]
+                            }
+                        },
+                        'sass-loader'
+                    ],
                 }
             ]
+        },
+        optimization: {
+            splitChunks: {
+                chunks: 'all',
+            },
         },
         plugins: [
             new CleanWebpackPlugin(),
             new MiniCssExtractPlugin({
-                filename: mode === 'production' ? '[name].[contenthash].css' : '[name].css',
+                filename: mode === 'production' ? '[name].[contenthash:8].css' : '[name].css',
             }),
         ],
         resolve: {
