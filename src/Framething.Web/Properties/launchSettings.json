@@ -18,7 +18,7 @@
     "Framething.Web": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "https://0:5001;http://0:5000",
+      "applicationUrl": "https://0:26874;http://0:26873",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
