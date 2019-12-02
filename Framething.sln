@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.87
 MinimumVisualStudioVersion = 15.0.26124.0
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Framething.Web", "src\Framething.Web\Framething.Web.csproj", "{FA5A8F13-B5B5-4EF2-B148-F3FB10F6C0DE}"
 EndProject
@@ -9,6 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
 		development.Dockerfile = development.Dockerfile
+		Directory.Build.props = Directory.Build.props
 		docker-compose.yml = docker-compose.yml
 		Dockerfile = Dockerfile
 		LICENSE = LICENSE
