@@ -1,3 +1,4 @@
+.env
 **/wwwroot/dist/
 
 ## Ignore Visual Studio temporary files, build results, and
