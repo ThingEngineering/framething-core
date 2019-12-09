@@ -55,6 +55,7 @@ namespace Framething.Web
                 options.LowercaseUrls = true;
             });
 
+            // This probably only works with Chrome, sigh user agent sniffing
             // https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/
             services.Configure<CookiePolicyOptions>(options =>
             {
@@ -85,6 +86,7 @@ namespace Framething.Web
             app.UseAuthentication();
             app.UseAuthorization();
 
+            // This probably only works with Chrome, sigh user agent sniffing
             // https://devblogs.microsoft.com/aspnet/upcoming-samesite-cookie-changes-in-asp-net-and-asp-net-core/
             app.UseCookiePolicy(new CookiePolicyOptions
             {

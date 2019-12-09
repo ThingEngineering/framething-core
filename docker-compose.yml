@@ -15,7 +15,6 @@ services:
       - ASPNETCORE_ENVIRONMENT="Development"
       - Google__ClientId
       - Google__ClientSecret
-
     volumes:
       - ./:/app/
   

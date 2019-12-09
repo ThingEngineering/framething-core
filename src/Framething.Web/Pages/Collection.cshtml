@@ -1,5 +1,19 @@
-﻿Collect Me
+﻿@page
+@model CollectionModel
+@{
+    ViewData["Title"] = "Collection";
+}
 
 @section Scripts {
     <script type="text/javascript" asp-src-include="~/dist/*.js"></script>
 }
+
+<div class="row" id="app">
+    <div class="col-categories">
+        <category-list></category-list>
+        <search-box></search-box>
+        <show-mastered></show-mastered>
+        <saving></saving>
+    </div>
+    <router-view :key="$route.fullPath"></router-view>
+</div>
