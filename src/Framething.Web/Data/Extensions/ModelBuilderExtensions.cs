@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Framething.Web.Data
 {
-    static class ModelBuilderExtensions
+    public static class ModelBuilderExtensions
     {
         public static void UsePostgresConventions(this ModelBuilder modelBuilder)
         {

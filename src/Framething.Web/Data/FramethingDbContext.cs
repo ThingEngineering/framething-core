@@ -36,8 +36,13 @@ namespace Framething.Web.Data
             base.OnModelCreating(builder);
 
             builder.UsePostgresConventions();
+
+            builder.Entity<GameItemComponent>()
+                .HasKey(gic => new { gic.ItemId, gic.ComponentId });
         }
 
+        public DbSet<GameItem> GameItem { get; set; }
+        public DbSet<GameItemComponent> GameItemComponent { get; set; }
         //public DbSet<type> thing { get; set; }
     }
 }
